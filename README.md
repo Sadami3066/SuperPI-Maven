@@ -180,7 +180,7 @@ cp -R DeepDeep-Plugins/template my-plugin
 ### 与 App 插件 ABI 的关系
 
 - `plugin-api` 是宿主与插件之间的唯一 ABI 契约。插件实现 `DeepDeepPlugin`，由宿主在 App 进程内用内存 ClassLoader 装载，类解析 parent-first。
-- 宿主按清单 `apiLevel` 与支持范围（当前 `5..5`）决定是否装载插件；UI 另有 `HOST_UI_API_LEVEL = 1` 的兼容判定。
+- 宿主按清单 `apiLevel` 与支持范围（当前 `6..6`）决定是否装载插件；UI 另有 `HOST_UI_API_LEVEL = 2` 的兼容判定。
 - **发布前没有兼容承诺**：`plugin-api` 的公开类型与签名可能随版本删改而不提升 `PLUGIN_API_LEVEL`，升级后需用最新 SDK 重新编译；发布后才启用「同一等级只做加法，删改必须提升等级」的规则。
 - Compose 没有跨版本二进制 ABI 承诺：宿主与插件的 Kotlin / Compose 版本不一致时，只会禁用该插件的 UI，不影响插件其余部分。
 - 公开 ABI 由宿主工程中的 ABI 基线与 golden 清单固定；插件不要反射宿主内部实现。
