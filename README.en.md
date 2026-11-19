@@ -144,7 +144,7 @@ The matching `assets/plugin.json`:
 }
 ```
 
-This example does not use any host service, so `capabilities` is empty; real plugins declare the capabilities they need. See the [plugin development docs](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/docs/PLUGIN_DEV.md) for manifest fields, capabilities and `.ddp` packaging/signing.
+This example does not use any host service, so `capabilities` is empty; real plugins declare the capabilities they need. See the [plugin development docs](https://github.com/Sadami3066/DeepDeep/blob/master/docs/PLUGIN_DEV.md) for manifest fields, capabilities and `.ddp` packaging/signing.
 
 ### 5. Start from the official template
 
@@ -169,9 +169,9 @@ Copy the `.ddp` to your phone and install it from "Plugins → Import plugin" in
 ### Version selection and upgrades
 
 - Pin `plugin-api` through `pluginApiVersion` (or a literal version) in your plugin project; when the host SDK is upgraded, update it and rebuild.
-- The published `plugin-api` version (such as `1.4.0`) and the contract level `PLUGIN_API_LEVEL` (currently `5`) are maintained independently; a version bump does not necessarily change the level.
+- The published `plugin-api` version (such as `1.4.0`) and the contract level `PLUGIN_API_LEVEL` (currently `6`) are maintained independently; a version bump does not necessarily change the level.
 - `design` is versioned independently (currently `0.11.0`) and is provided transitively by `plugin-api`; do not add it with `implementation`.
-- Before upgrading, read [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/docs/PLUGIN_DEV.md) and the [CHANGELOG](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/CHANGELOG.md).
+- Before upgrading, read [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/DeepDeep/blob/master/docs/PLUGIN_DEV.md) and the [CHANGELOG](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/CHANGELOG.md).
 
 ### Read-only usage
 
@@ -180,7 +180,7 @@ This repository is distribution only: files under `io/` are published artifacts,
 ### Relationship to the app plugin ABI
 
 - `plugin-api` is the single ABI contract between host and plugins. Plugins implement `DeepDeepPlugin` and are loaded by the host in the app process with an in-memory ClassLoader; class resolution is parent-first.
-- The host uses the manifest `apiLevel` and the supported range (currently `5..5`) to decide whether to load a plugin; UI has its own `HOST_UI_API_LEVEL = 1` compatibility check.
+- The host uses the manifest `apiLevel` and the supported range (currently `6..6`) to decide whether to load a plugin; UI has its own `HOST_UI_API_LEVEL = 2` compatibility check.
 - **There is no compatibility promise before release**: public types and signatures in `plugin-api` may change or be removed without raising `PLUGIN_API_LEVEL`, so rebuild against the latest SDK when upgrading. After release, the rule is "additive only within the same level; removals or changes require a level bump".
 - Compose has no binary ABI promise across versions: if host and plugin Kotlin / Compose versions differ, only that plugin's UI is disabled, not the rest of the plugin.
 - The public ABI is pinned by the ABI baseline and golden manifest in the host project; plugins must not reflect over host internals.

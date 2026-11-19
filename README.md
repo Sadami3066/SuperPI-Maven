@@ -144,7 +144,7 @@ class MyPlugin : DeepDeepPlugin {
 }
 ```
 
-示例不访问宿主服务，因此 `capabilities` 为空数组；实际插件按需声明所需能力。清单字段、能力声明与 `.ddp` 打包签名见 [插件开发文档](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/docs/PLUGIN_DEV.md)。
+示例不访问宿主服务，因此 `capabilities` 为空数组；实际插件按需声明所需能力。清单字段、能力声明与 `.ddp` 打包签名见 [插件开发文档](https://github.com/Sadami3066/DeepDeep/blob/master/docs/PLUGIN_DEV.md)。
 
 ### 5. 从官方模板开始
 
@@ -171,7 +171,7 @@ cp -R DeepDeep-Plugins/template my-plugin
 - 插件工程通过 `pluginApiVersion`（或直接写版本号）锁定 `plugin-api`；宿主 SDK 升级时同步改版本并重新编译。
 - `plugin-api` 的发布版本（如 `1.4.0`）与契约等级 `PLUGIN_API_LEVEL`（当前 `6`）独立维护，版本号变化不必然改变等级。
 - `design` 版本独立（当前 `0.11.0`），由 `plugin-api` 传递，不要单独用 `implementation` 引入。
-- 升级前查看 [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/docs/PLUGIN_DEV.md) 与 [CHANGELOG](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/CHANGELOG.md)。
+- 升级前查看 [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/DeepDeep/blob/master/docs/PLUGIN_DEV.md) 与 [CHANGELOG](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/CHANGELOG.md)。
 
 ### 只读使用
 
