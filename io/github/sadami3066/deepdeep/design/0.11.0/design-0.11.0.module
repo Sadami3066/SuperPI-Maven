@@ -1,0 +1,152 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.sadami3066.deepdeep",
+    "module": "design",
+    "version": "0.11.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.03.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.animation",
+          "module": "animation"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "design-0.11.0.aar",
+          "url": "design-0.11.0.aar",
+          "size": 2003642,
+          "sha512": "1674d9f1308dacf29d1d991681601032ce5d325cf90df4ce93043bbc97d23c9bb1658e1d2aa6b23c69f944819c469715b5b18fb1b7aebd36b5bc7b54a5982391",
+          "sha256": "1122f6adebb493ed80dc999d46a2f18af8e1e0766af9419b7b5b98db6f4c04b7",
+          "sha1": "655acc7d6ef99b33ef28e0528d28e8747cdd6e34",
+          "md5": "489bfbe22cd3978e6fb6cdf0c10470fe"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui-tooling-preview"
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2026.03.00"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          }
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.animation",
+          "module": "animation"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "design-0.11.0.aar",
+          "url": "design-0.11.0.aar",
+          "size": 2003642,
+          "sha512": "1674d9f1308dacf29d1d991681601032ce5d325cf90df4ce93043bbc97d23c9bb1658e1d2aa6b23c69f944819c469715b5b18fb1b7aebd36b5bc7b54a5982391",
+          "sha256": "1122f6adebb493ed80dc999d46a2f18af8e1e0766af9419b7b5b98db6f4c04b7",
+          "sha1": "655acc7d6ef99b33ef28e0528d28e8747cdd6e34",
+          "md5": "489bfbe22cd3978e6fb6cdf0c10470fe"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "design-0.11.0-sources.jar",
+          "url": "design-0.11.0-sources.jar",
+          "size": 78223,
+          "sha512": "c9078a74d9f9fcc2d53d1efa96a4a08dd1ca49edd8fabb6e671b465f3014fb68cd2bf650b683740178ffe81336172a996b8f3e549791c79aab819c3a62c34c59",
+          "sha256": "060cc5e51519ced469b32c6aa8a340b1781ce6cf5c3652ccb421975e4e82e178",
+          "sha1": "f5c4525f7f132c9b877e65eceb12933f9c4fb7dd",
+          "md5": "648af73e28745337543ca2fc1181154e"
+        }
+      ]
+    }
+  ]
+}
