@@ -4,11 +4,11 @@ Super PI Agent 插件开发的公开 Maven 仓库：托管插件契约 `plugin-a
 
 ## 概览
 
-- 这是一个**只读的 Maven 分发仓库**，通过 GitHub Pages 提供：`https://sadami3066.github.io/deepdeep-maven/`
+- 这是一个**只读的 Maven 分发仓库**，通过 GitHub Pages 提供：`https://sadami3066.github.io/SuperPI-Maven/`
 - 仓库只存放已发布的构建产物（AAR、POM、Gradle module metadata、sources 与校验文件），不包含宿主实现，也不接受上传。
-- 面向插件开发者：插件是 Kotlin 代码，实现 `DeepDeepPlugin`，用 `plugin-api` 编译，由宿主 App 在进程内加载。
-- 插件模板与完整开发文档：[DeepDeep-Plugins](https://github.com/Sadami3066/DeepDeep-Plugins)
-- 官方插件参考实现：[DeepDeep-Official-Plugins](https://github.com/Sadami3066/DeepDeep-Official-Plugins)
+- 面向插件开发者：插件是 Kotlin 代码，实现 `SuperPIPlugin`，用 `plugin-api` 编译，由宿主 App 在进程内加载。
+- 插件模板与完整开发文档：[SuperPI-Plugins](https://github.com/Sadami3066/SuperPI-Plugins)
+- 官方插件参考实现：[SuperPI-Official-Plugins](https://github.com/Sadami3066/SuperPI-Official-Plugins)
 
 ## 仓库内容
 
@@ -16,18 +16,18 @@ Super PI Agent 插件开发的公开 Maven 仓库：托管插件契约 `plugin-a
 
 | 坐标 | 版本 | 说明 |
 | --- | --- | --- |
-| `io.github.sadami3066.deepdeep:plugin-api` | `1.4.0` | 插件契约 SDK（AAR），当前 `PLUGIN_API_LEVEL = 6` |
-| `io.github.sadami3066.deepdeep:design` | `0.11.0` | 与 App 同源的 Compose 设计系统，版本独立维护 |
+| `io.github.sadami3066.superpi:plugin-api` | `2.0.0` | 插件契约 SDK（AAR），当前 `PLUGIN_API_LEVEL = 7` |
+| `io.github.sadami3066.superpi:design` | `1.0.0` | 与 App 同源的 Compose 设计系统，版本独立维护 |
 
 `design` 通过 `plugin-api` 的 `api()` 传递，插件工程通常只需声明 `plugin-api`。
 
 ### 目录结构
 
 ```
-io/github/sadami3066/deepdeep/
+io/github/sadami3066/superpi/
 ├── plugin-api/
 │   ├── maven-metadata.xml
-│   └── 1.4.0/
+│   └── 2.0.0/
 │       ├── plugin-api-1.4.0.aar
 │       ├── plugin-api-1.4.0.pom
 │       ├── plugin-api-1.4.0.module
@@ -35,7 +35,7 @@ io/github/sadami3066/deepdeep/
 │       └── *.md5 / *.sha1 / *.sha256 / *.sha512
 └── design/
     ├── maven-metadata.xml
-    └── 0.11.0/
+    └── 1.0.0/
         ├── design-0.11.0.aar
         ├── design-0.11.0.pom
         ├── design-0.11.0.module
@@ -43,7 +43,7 @@ io/github/sadami3066/deepdeep/
         └── *.md5 / *.sha1 / *.sha256 / *.sha512
 ```
 
-- Maven group 是 `io.github.sadami3066.deepdeep`；代码包名沿用 `io.github.whywood.deepdeep.plugin.api` 与 `io.github.whywood.deepdeep.design`，两者属于同一项目。
+- Maven group 是 `io.github.sadami3066.superpi`；代码包名沿用 `io.github.whywood.superpi.plugin.api` 与 `io.github.whywood.superpi.design`，两者属于同一项目。
 - 制品来自 Super PI Agent 宿主工程的 `:plugin-api` 与 `:design` 模块；每个版本附 POM、Gradle module metadata、sources jar 与 MD5/SHA-1/SHA-256/SHA-512 校验和。
 - `plugin-api` 的 AAR 自带 consumer ProGuard 规则；`design` 的 AAR 包含字体与图标资源，其许可文本随 `assets/licenses/` 分发。
 
@@ -57,8 +57,8 @@ Kotlin DSL，推荐在 `settings.gradle.kts` 中集中声明：
 dependencyResolutionManagement {
     repositories {
         maven {
-            url = uri("https://sadami3066.github.io/deepdeep-maven")
-            content { includeGroup("io.github.sadami3066.deepdeep") }
+            url = uri("https://sadami3066.github.io/SuperPI-Maven")
+            content { includeGroup("io.github.sadami3066.superpi") }
         }
         google()
         mavenCentral()
@@ -66,20 +66,20 @@ dependencyResolutionManagement {
 }
 ```
 
-也可以只在模块的 `repositories { maven { url = uri("https://sadami3066.github.io/deepdeep-maven") } }` 中声明。本仓库只提供上面两个 group 的 AAR；Compose、协程等依赖仍从 `google()` / `mavenCentral()` 解析。
+也可以只在模块的 `repositories { maven { url = uri("https://sadami3066.github.io/SuperPI-Maven") } }` 中声明。本仓库只提供上面两个 group 的 AAR；Compose、协程等依赖仍从 `google()` / `mavenCentral()` 解析。
 
 ### 2. 声明依赖
 
 ```kotlin
 dependencies {
-    compileOnly("io.github.sadami3066.deepdeep:plugin-api:1.4.0")
+    compileOnly("io.github.sadami3066.superpi:plugin-api:1.4.0")
 }
 ```
 
 `design` 已由 `plugin-api` 传递；需要显式写坐标时同样使用 `compileOnly`：
 
 ```kotlin
-compileOnly("io.github.sadami3066.deepdeep:design:0.11.0")
+compileOnly("io.github.sadami3066.superpi:design:0.11.0")
 ```
 
 插件与宿主共享同一份类（parent-first）。**宿主已提供的库一律用 `compileOnly`，不要用 `implementation`**：把 `plugin-api`、Compose 或协程打包进 `.ddp` 会与宿主重复并触发类冲突。
@@ -105,15 +105,15 @@ compileOnly("io.github.sadami3066.deepdeep:design:0.11.0")
 ```kotlin
 package com.example.myplugin
 
-import io.github.whywood.deepdeep.plugin.api.Contributions
-import io.github.whywood.deepdeep.plugin.api.DeepDeepPlugin
-import io.github.whywood.deepdeep.plugin.api.PluginAvailability
-import io.github.whywood.deepdeep.plugin.api.PluginHost
-import io.github.whywood.deepdeep.plugin.api.PluginTool
-import io.github.whywood.deepdeep.plugin.api.PluginToolResult
+import io.github.whywood.superpi.plugin.api.Contributions
+import io.github.whywood.superpi.plugin.api.SuperPIPlugin
+import io.github.whywood.superpi.plugin.api.PluginAvailability
+import io.github.whywood.superpi.plugin.api.PluginHost
+import io.github.whywood.superpi.plugin.api.PluginTool
+import io.github.whywood.superpi.plugin.api.PluginToolResult
 import kotlinx.serialization.json.buildJsonObject
 
-class MyPlugin : DeepDeepPlugin {
+class MyPlugin : SuperPIPlugin {
     override suspend fun availability(host: PluginHost): PluginAvailability =
         PluginAvailability.Available
 
@@ -144,13 +144,13 @@ class MyPlugin : DeepDeepPlugin {
 }
 ```
 
-示例不访问宿主服务，因此 `capabilities` 为空数组；实际插件按需声明所需能力。清单字段、能力声明与 `.ddp` 打包签名见 [插件开发文档](https://github.com/Sadami3066/DeepDeep/blob/master/docs/PLUGIN_DEV.md)。
+示例不访问宿主服务，因此 `capabilities` 为空数组；实际插件按需声明所需能力。清单字段、能力声明与 `.ddp` 打包签名见 [插件开发文档](https://github.com/Sadami3066/SuperPI/blob/master/docs/PLUGIN_DEV.md)。
 
 ### 5. 从官方模板开始
 
 ```bash
-git clone https://github.com/Sadami3066/DeepDeep-Plugins
-cp -R DeepDeep-Plugins/template my-plugin
+git clone https://github.com/Sadami3066/SuperPI-Plugins
+cp -R SuperPI-Plugins/template my-plugin
 ```
 
 模板已配置好本仓库地址、`pluginApiVersion = "1.4.0"` 与全套 `compileOnly` 依赖。改成自己的 `namespace` / `applicationId`、清单 `id` / `version` / `entryClass` 与包名后：
@@ -162,16 +162,16 @@ cp -R DeepDeep-Plugins/template my-plugin
 ./gradlew verifyPlugin         # 校验签名与清单
 ```
 
-把 `.ddp` 传到手机，在 App 的「插件 → 导入插件」中安装。完整流程见[模板仓库](https://github.com/Sadami3066/DeepDeep-Plugins#readme)。
+把 `.ddp` 传到手机，在 App 的「插件 → 导入插件」中安装。完整流程见[模板仓库](https://github.com/Sadami3066/SuperPI-Plugins#readme)。
 
 ## 使用方式
 
 ### 版本选择与升级
 
 - 插件工程通过 `pluginApiVersion`（或直接写版本号）锁定 `plugin-api`；宿主 SDK 升级时同步改版本并重新编译。
-- `plugin-api` 的发布版本（如 `1.4.0`）与契约等级 `PLUGIN_API_LEVEL`（当前 `6`）独立维护，版本号变化不必然改变等级。
-- `design` 版本独立（当前 `0.11.0`），由 `plugin-api` 传递，不要单独用 `implementation` 引入。
-- 升级前查看 [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/DeepDeep/blob/master/docs/PLUGIN_DEV.md) 与 [CHANGELOG](https://github.com/Sadami3066/DeepDeep-Plugins/blob/master/CHANGELOG.md)。
+- `plugin-api` 的发布版本（如 `2.0.0`）与契约等级 `PLUGIN_API_LEVEL`（当前 `6`）独立维护，版本号变化不必然改变等级。
+- `design` 版本独立（当前 `1.0.0`），由 `plugin-api` 传递，不要单独用 `implementation` 引入。
+- 升级前查看 [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/SuperPI/blob/master/docs/PLUGIN_DEV.md) 与 [CHANGELOG](https://github.com/Sadami3066/SuperPI-Plugins/blob/master/CHANGELOG.md)。
 
 ### 只读使用
 
@@ -179,7 +179,7 @@ cp -R DeepDeep-Plugins/template my-plugin
 
 ### 与 App 插件 ABI 的关系
 
-- `plugin-api` 是宿主与插件之间的唯一 ABI 契约。插件实现 `DeepDeepPlugin`，由宿主在 App 进程内用内存 ClassLoader 装载，类解析 parent-first。
+- `plugin-api` 是宿主与插件之间的唯一 ABI 契约。插件实现 `SuperPIPlugin`，由宿主在 App 进程内用内存 ClassLoader 装载，类解析 parent-first。
 - 宿主按清单 `apiLevel` 与支持范围（当前 `6..6`）决定是否装载插件；UI 另有 `HOST_UI_API_LEVEL = 2` 的兼容判定。
 - **发布前没有兼容承诺**：`plugin-api` 的公开类型与签名可能随版本删改而不提升 `PLUGIN_API_LEVEL`，升级后需用最新 SDK 重新编译；发布后才启用「同一等级只做加法，删改必须提升等级」的规则。
 - Compose 没有跨版本二进制 ABI 承诺：宿主与插件的 Kotlin / Compose 版本不一致时，只会禁用该插件的 UI，不影响插件其余部分。
@@ -191,7 +191,7 @@ cp -R DeepDeep-Plugins/template my-plugin
 - **同版本覆盖与撤回**：以相同版本号重复发布时，已发布文件与校验和会被覆盖；仓库历史被改写或 Pages 关闭时版本也可能消失。依赖方应锁定精确版本并保存校验和。
 - **API 兼容性与 ABI 演进**：发布前 SDK 可随时做不兼容变更；发布后按契约等级做加法。跨版本升级请重新编译并跑宿主回归。
 - **GitHub Pages 可用性**：本仓库依赖 GitHub Pages 提供只读 HTTP 服务，不承诺 SLA；网络受限、GitHub 故障或缓存异常都会表现为依赖解析失败。可先用本地 Gradle 缓存或离线模式重试。
-- **非官方镜像**：官方地址只有 `https://sadami3066.github.io/deepdeep-maven/` 与其对应的 GitHub 仓库；第三方镜像可能过期或被篡改，使用前务必核对 SHA-256，不建议作为唯一来源。
+- **非官方镜像**：官方地址只有 `https://sadami3066.github.io/SuperPI-Maven/` 与其对应的 GitHub 仓库；第三方镜像可能过期或被篡改，使用前务必核对 SHA-256，不建议作为唯一来源。
 - **安全提示**：插件与宿主同进程、同 UID，没有沙箱；只导入你信任的插件。
 
 ## 权益与许可
@@ -204,5 +204,5 @@ cp -R DeepDeep-Plugins/template my-plugin
 ## 声明与反馈
 
 - 本仓库是 Super PI Agent 插件制品的官方公开分发渠道，只读；不提供宿主 App 安装包，也不代表插件市场对第三方的审核背书。
-- 依赖解析、坐标或版本问题请在 [DeepDeep-Plugins Issues](https://github.com/Sadami3066/DeepDeep-Plugins/issues) 或[本仓库 Issues](https://github.com/Sadami3066/deepdeep-maven/issues) 反馈。
+- 依赖解析、坐标或版本问题请在 [SuperPI-Plugins Issues](https://github.com/Sadami3066/SuperPI-Plugins/issues) 或[本仓库 Issues](https://github.com/Sadami3066/SuperPI-Maven/issues) 反馈。
 - 安全漏洞请勿公开提交 issue，请通过私下渠道联系维护者。
