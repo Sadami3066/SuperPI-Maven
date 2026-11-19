@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-mcp/0.7.0/pi-mcp-0.7.0.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-mcp",
+    "version": "0.7.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-mcp-jvm-0.7.0.jar",
+          "url": "pi-mcp-jvm-0.7.0.jar",
+          "size": 477939,
+          "sha512": "247cb4f072f8711fb5fc94b7ff54eb9d0a8e7db3c04ae4c1267bbe289804bab0a690221cc613d334eadf8aaed298bdd1ec77e4bb687c3e4c68ca507832b6c074",
+          "sha256": "068599a67ab2a3dead1838a3b23a01a7514d93146e7b0fbdecd09b0a9d76bbbe",
+          "sha1": "c07752d8dcc9dbb468c6cdeb41ccdedc35591bef",
+          "md5": "931e08ef157cee430ab87fc9ecb7589d"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-mcp-jvm-0.7.0.jar",
+          "url": "pi-mcp-jvm-0.7.0.jar",
+          "size": 477939,
+          "sha512": "247cb4f072f8711fb5fc94b7ff54eb9d0a8e7db3c04ae4c1267bbe289804bab0a690221cc613d334eadf8aaed298bdd1ec77e4bb687c3e4c68ca507832b6c074",
+          "sha256": "068599a67ab2a3dead1838a3b23a01a7514d93146e7b0fbdecd09b0a9d76bbbe",
+          "sha1": "c07752d8dcc9dbb468c6cdeb41ccdedc35591bef",
+          "md5": "931e08ef157cee430ab87fc9ecb7589d"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "pi-mcp-jvm-0.7.0-sources.jar",
+          "url": "pi-mcp-jvm-0.7.0-sources.jar",
+          "size": 45188,
+          "sha512": "e1641cc4fdf00e42a1dd10c439e1184a9d4c7835069424047231a1d6d436f94f5d6a9cf3230ee970805fbaeabcccd88aa7a23b383a0930c54488f1b0da9d346c",
+          "sha256": "461613d0044b3b7413e4865d18a2fbaed2e38925921a82f34ae1e1d721e9631e",
+          "sha1": "128cccb7f37bb3540c81a5b5cfe4d4759adf80b6",
+          "md5": "d460afa90084449a3caa6fabc9a69b3a"
+        }
+      ]
+    }
+  ]
+}

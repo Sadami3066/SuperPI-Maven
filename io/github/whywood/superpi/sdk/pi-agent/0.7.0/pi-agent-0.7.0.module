@@ -1,0 +1,176 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-agent",
+    "version": "0.7.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-agent-metadata-0.7.0.jar",
+          "url": "pi-agent-0.7.0.jar",
+          "size": 710,
+          "sha512": "f0743c19561eb4ca6e909cf1c176f9c3fe86c3d2f51eadbeb3509ec6e7f795a8a4d78675c3a0311d4cad54d6600d86561ce32f9c1d9ad83cc4551a853cd047a0",
+          "sha256": "225746c6ffcf280f677b289070d646b64af638a857c9a161b1e5b12648789bd7",
+          "sha1": "9d773f93ac25ec127711e68c655c6d923cdc0048",
+          "md5": "a4e5c73d17b48c9273984545999f73a5"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "pi-agent-kotlin-0.7.0-sources.jar",
+          "url": "pi-agent-0.7.0-sources.jar",
+          "size": 18636,
+          "sha512": "c458cbafcbcc70db107f21955057a0d54594f8bc505f998aecbd523fe12db6123b4faa35b7b4500b8352890b6e8d4d0795cbd6612bedd122f9b6953fc3505dbe",
+          "sha256": "58677697413d7a390d2aae108fdfda549c5ada66c467f0aa743829a641458f17",
+          "sha1": "0ee6632ab6ba541f061b5a81498a6ef627b1a720",
+          "md5": "5c760202609ce1f770df36436833a6b0"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-agent-android/0.7.0/pi-agent-android-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-agent-android",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-agent-android/0.7.0/pi-agent-android-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-agent-android",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-agent-android/0.7.0/pi-agent-android-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-agent-android",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-agent-jvm/0.7.0/pi-agent-jvm-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-agent-jvm",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-agent-jvm/0.7.0/pi-agent-jvm-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-agent-jvm",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-agent-jvm/0.7.0/pi-agent-jvm-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-agent-jvm",
+        "version": "0.7.0"
+      }
+    }
+  ]
+}

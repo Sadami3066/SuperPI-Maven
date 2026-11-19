@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-coding-agent/0.7.0/pi-coding-agent-0.7.0.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-coding-agent",
+    "version": "0.7.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-agent",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-mcp",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-coding-agent-jvm-0.7.0.jar",
+          "url": "pi-coding-agent-jvm-0.7.0.jar",
+          "size": 1211537,
+          "sha512": "fd8e6e6db20cac932a984f5ddbed664c36f616c22314f3aca1594bc519be574c02344e6f5123b25f9cca4eac9ed698ecbc605fc88c58ab5fecf42f7327a651b8",
+          "sha256": "a123c6670241181db14fffa565243f93d7615f3df40895557846eaf6c033cab0",
+          "sha1": "254fbf82a5e95d298c4ea40607de8de5b424af86",
+          "md5": "77e884f7a7e83d4d051304d23a1074cb"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-agent",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-mcp",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-coding-agent-jvm-0.7.0.jar",
+          "url": "pi-coding-agent-jvm-0.7.0.jar",
+          "size": 1211537,
+          "sha512": "fd8e6e6db20cac932a984f5ddbed664c36f616c22314f3aca1594bc519be574c02344e6f5123b25f9cca4eac9ed698ecbc605fc88c58ab5fecf42f7327a651b8",
+          "sha256": "a123c6670241181db14fffa565243f93d7615f3df40895557846eaf6c033cab0",
+          "sha1": "254fbf82a5e95d298c4ea40607de8de5b424af86",
+          "md5": "77e884f7a7e83d4d051304d23a1074cb"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "pi-coding-agent-jvm-0.7.0-sources.jar",
+          "url": "pi-coding-agent-jvm-0.7.0-sources.jar",
+          "size": 147439,
+          "sha512": "24199f21f07a723976cc8ae5af7ed40eeb42040541d5ebbe27818b97a0bef2a3fe74c9146b7a218e66d2ec1f2b0c7ee482ca95c96d667c0997a085d8631a6622",
+          "sha256": "7a288381c08585a6faba4ec7e24be715833ea95610a8a33bb8413da99900e047",
+          "sha1": "d656c90ae07679dd259707f935e96a9d84fcdbbc",
+          "md5": "5287dce60b8db4704870fbb84f0dbc62"
+        }
+      ]
+    }
+  ]
+}

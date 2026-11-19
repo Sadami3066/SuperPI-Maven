@@ -1,0 +1,190 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-coding-agent",
+    "version": "0.7.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-agent",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-mcp",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-coding-agent-metadata-0.7.0.jar",
+          "url": "pi-coding-agent-0.7.0.jar",
+          "size": 755,
+          "sha512": "6a38f38f35be1e037049fb5ae7d40201443db804fbd809853c868bfc4be58848020895d930dee704e9b0eaf4d2d23b68514f9712798d92ef53c398311c0639c6",
+          "sha256": "2bba28446a6bd8bc259b7f5e4f451c6c11dc7ebc628911dc318d7fbe431b0480",
+          "sha1": "0f151305bba66330ea930a2fc0aa45a6229d9dd4",
+          "md5": "9e4eb7dde75a0f56003b587b2de8e525"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "pi-coding-agent-kotlin-0.7.0-sources.jar",
+          "url": "pi-coding-agent-0.7.0-sources.jar",
+          "size": 143690,
+          "sha512": "b3d89a06d3e7caea67b607c07c57bad05c4c7270154f854156705a90837c797aa016f2219f060a83a29dc214c82434c741f1e606a63d41896e8b9356a8d69872",
+          "sha256": "404ca1aab9b81a1d1c3416037da61d93ffeb5eacee28aaeb4107fb0249e2b348",
+          "sha1": "e8a1b9e676e7c2821e2d8d69a365ef62b925bcb7",
+          "md5": "6fcea96d1bb49d88dfbd68dfd5f8d18f"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-coding-agent-android/0.7.0/pi-coding-agent-android-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-coding-agent-android",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-coding-agent-android/0.7.0/pi-coding-agent-android-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-coding-agent-android",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-coding-agent-android/0.7.0/pi-coding-agent-android-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-coding-agent-android",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-coding-agent-jvm/0.7.0/pi-coding-agent-jvm-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-coding-agent-jvm",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-coding-agent-jvm/0.7.0/pi-coding-agent-jvm-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-coding-agent-jvm",
+        "version": "0.7.0"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-coding-agent-jvm/0.7.0/pi-coding-agent-jvm-0.7.0.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-coding-agent-jvm",
+        "version": "0.7.0"
+      }
+    }
+  ]
+}

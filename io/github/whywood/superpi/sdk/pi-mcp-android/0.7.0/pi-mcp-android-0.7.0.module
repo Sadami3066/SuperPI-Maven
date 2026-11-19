@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-mcp/0.7.0/pi-mcp-0.7.0.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-mcp",
+    "version": "0.7.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-mcp.aar",
+          "url": "pi-mcp-android-0.7.0.aar",
+          "size": 408789,
+          "sha512": "a230820257400b70b75da93e2bde544ecadc449fbf6a9c920c973b5c52fe22f9f4c33dced9d8469e944f00393fefa4696767da6f2502fb16a158d4a5b4c3eaf0",
+          "sha256": "ac0d9a6e390e7ee2b1aa3aeb080bca0358b05e9392cb01e2974c8ac28c32682b",
+          "sha1": "3b133c90cf71513f01a765d76e8a41ee14ece47a",
+          "md5": "67408356d78877799212ba6d567e444b"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-mcp.aar",
+          "url": "pi-mcp-android-0.7.0.aar",
+          "size": 408789,
+          "sha512": "a230820257400b70b75da93e2bde544ecadc449fbf6a9c920c973b5c52fe22f9f4c33dced9d8469e944f00393fefa4696767da6f2502fb16a158d4a5b4c3eaf0",
+          "sha256": "ac0d9a6e390e7ee2b1aa3aeb080bca0358b05e9392cb01e2974c8ac28c32682b",
+          "sha1": "3b133c90cf71513f01a765d76e8a41ee14ece47a",
+          "md5": "67408356d78877799212ba6d567e444b"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "pi-mcp-android-0.7.0-sources.jar",
+          "url": "pi-mcp-android-0.7.0-sources.jar",
+          "size": 39453,
+          "sha512": "f2e08bc3b631536abf02095574990b2b0f930d4588b95d920213fa2c2b79fa943f623e6e611cc90e8d2854955452b98db32ca4c402f033952050b8c9fa1b0b4d",
+          "sha256": "1ae372b67abce0bca639f2a30b6678da0d942a8ea5be35b7b86062fa0e6928e7",
+          "sha1": "fe907a82c6d8cd683b68cd04b5d38c1148b84447",
+          "md5": "9b333841538d0c6af19d3d621896e6c6"
+        }
+      ]
+    }
+  ]
+}
