@@ -1,6 +1,6 @@
-# DeepDeep Maven
+# Super PI Agent Maven
 
-DeepDeep 插件开发的公开 Maven 仓库：托管插件契约 `plugin-api` 与设计系统 `design`，供外部 `.ddp` 插件工程在编译期引用。
+Super PI Agent 插件开发的公开 Maven 仓库：托管插件契约 `plugin-api` 与设计系统 `design`，供外部 `.ddp` 插件工程在编译期引用。
 
 ## 概览
 
@@ -44,7 +44,7 @@ io/github/sadami3066/deepdeep/
 ```
 
 - Maven group 是 `io.github.sadami3066.deepdeep`；代码包名沿用 `io.github.whywood.deepdeep.plugin.api` 与 `io.github.whywood.deepdeep.design`，两者属于同一项目。
-- 制品来自 DeepDeep 宿主工程的 `:plugin-api` 与 `:design` 模块；每个版本附 POM、Gradle module metadata、sources jar 与 MD5/SHA-1/SHA-256/SHA-512 校验和。
+- 制品来自 Super PI Agent 宿主工程的 `:plugin-api` 与 `:design` 模块；每个版本附 POM、Gradle module metadata、sources jar 与 MD5/SHA-1/SHA-256/SHA-512 校验和。
 - `plugin-api` 的 AAR 自带 consumer ProGuard 规则；`design` 的 AAR 包含字体与图标资源，其许可文本随 `assets/licenses/` 分发。
 
 ## 快速开始
@@ -139,7 +139,7 @@ class MyPlugin : DeepDeepPlugin {
   "version": "1.0.0",
   "entryClass": "com.example.myplugin.MyPlugin",
   "name": { "default": "My Plugin", "zh": "我的插件" },
-  "summary": { "default": "Minimal DeepDeep plugin" },
+  "summary": { "default": "Minimal PI plugin" },
   "capabilities": []
 }
 ```
@@ -196,13 +196,13 @@ cp -R DeepDeep-Plugins/template my-plugin
 
 ## 权益与许可
 
-- `plugin-api` 与 `design` 的代码来自 DeepDeep，采用 [Apache-2.0](LICENSE)。
+- `plugin-api` 与 `design` 的代码来自 Super PI Agent，采用 [Apache-2.0](LICENSE)。
 - `design` AAR 内含的字体（Lora、Manrope、Open Runde、Fredoka）为 SIL Open Font License 1.1，图标（Tabler Icons）为 MIT；完整文本随 AAR 的 `assets/licenses/` 分发。
 - 传递依赖（AndroidX Compose、Kotlin、kotlinx 等）遵循各自的许可证。
-- 本仓库不授予 DeepDeep 名称、图标等商标权利。
+- 本仓库不授予 Super PI Agent 名称、图标等商标权利。
 
 ## 声明与反馈
 
-- 本仓库是 DeepDeep 插件制品的官方公开分发渠道，只读；不提供宿主 App 安装包，也不代表插件市场对第三方的审核背书。
+- 本仓库是 Super PI Agent 插件制品的官方公开分发渠道，只读；不提供宿主 App 安装包，也不代表插件市场对第三方的审核背书。
 - 依赖解析、坐标或版本问题请在 [DeepDeep-Plugins Issues](https://github.com/Sadami3066/DeepDeep-Plugins/issues) 或[本仓库 Issues](https://github.com/Sadami3066/deepdeep-maven/issues) 反馈。
 - 安全漏洞请勿公开提交 issue，请通过私下渠道联系维护者。

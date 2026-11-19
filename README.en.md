@@ -1,6 +1,6 @@
-# DeepDeep Maven
+# Super PI Agent Maven
 
-Public Maven repository for DeepDeep plugin development: it hosts the plugin contract SDK `plugin-api` and the design system `design`, for external `.ddp` plugin projects to reference at compile time.
+Public Maven repository for Super PI Agent plugin development: it hosts the plugin contract SDK `plugin-api` and the design system `design`, for external `.ddp` plugin projects to reference at compile time.
 
 ## Overview
 
@@ -44,7 +44,7 @@ io/github/sadami3066/deepdeep/
 ```
 
 - The Maven group is `io.github.sadami3066.deepdeep`; the code packages remain `io.github.whywood.deepdeep.plugin.api` and `io.github.whywood.deepdeep.design`. Both belong to the same project.
-- Artifacts are published from the `:plugin-api` and `:design` modules of the DeepDeep host project. Every version ships a POM, Gradle module metadata, a sources jar, and MD5/SHA-1/SHA-256/SHA-512 checksums.
+- Artifacts are published from the `:plugin-api` and `:design` modules of the Super PI Agent host project. Every version ships a POM, Gradle module metadata, a sources jar, and MD5/SHA-1/SHA-256/SHA-512 checksums.
 - The `plugin-api` AAR includes consumer ProGuard rules; the `design` AAR bundles font and icon resources, with their license texts under `assets/licenses/`.
 
 ## Quick start
@@ -139,7 +139,7 @@ The matching `assets/plugin.json`:
   "version": "1.0.0",
   "entryClass": "com.example.myplugin.MyPlugin",
   "name": { "default": "My Plugin", "zh": "我的插件" },
-  "summary": { "default": "Minimal DeepDeep plugin" },
+  "summary": { "default": "Minimal PI plugin" },
   "capabilities": []
 }
 ```
@@ -196,13 +196,13 @@ This repository is distribution only: files under `io/` are published artifacts,
 
 ## Rights and licenses
 
-- The code in `plugin-api` and `design` comes from DeepDeep and is licensed under [Apache-2.0](LICENSE).
+- The code in `plugin-api` and `design` comes from Super PI Agent and is licensed under [Apache-2.0](LICENSE).
 - The `design` AAR bundles fonts (Lora, Manrope, Open Runde, Fredoka) under the SIL Open Font License 1.1 and icons (Tabler Icons) under MIT; the full texts are distributed in the AAR's `assets/licenses/`.
 - Transitive dependencies (AndroidX Compose, Kotlin, kotlinx, and others) are governed by their own licenses.
-- This repository grants no trademark rights to the DeepDeep name or logo.
+- This repository grants no trademark rights to the Super PI Agent name or logo.
 
 ## Statements and feedback
 
-- This repository is the official, read-only public distribution channel for DeepDeep plugin artifacts. It does not distribute the host app package and does not imply that any third-party plugin has been reviewed or endorsed by the plugin marketplace.
+- This repository is the official, read-only public distribution channel for Super PI Agent plugin artifacts. It does not distribute the host app package and does not imply that any third-party plugin has been reviewed or endorsed by the plugin marketplace.
 - For dependency resolution, coordinate or version issues, use [DeepDeep-Plugins Issues](https://github.com/Sadami3066/DeepDeep-Plugins/issues) or the [issues of this repository](https://github.com/Sadami3066/deepdeep-maven/issues).
 - Please do not report security vulnerabilities in public issues; contact the maintainers privately instead.
