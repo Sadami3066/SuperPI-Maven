@@ -16,7 +16,7 @@ Public Maven repository for Super PI Agent plugin development: it hosts the plug
 
 | Coordinate | Version | Notes |
 | --- | --- | --- |
-| `io.github.sadami3066.superpi:plugin-api` | `2.0.0` | Plugin contract SDK (AAR), current `PLUGIN_API_LEVEL = 7` |
+| `io.github.sadami3066.superpi:plugin-api` | `2.0.1` | Plugin contract SDK (AAR), current `PLUGIN_API_LEVEL = 7` |
 | `io.github.sadami3066.superpi:design` | `1.0.0` | Compose design system shared with the app, versioned independently |
 
 `design` is exposed transitively through the `api()` configuration of `plugin-api`, so plugin projects normally only declare `plugin-api`.
@@ -27,7 +27,7 @@ Public Maven repository for Super PI Agent plugin development: it hosts the plug
 io/github/sadami3066/superpi/
 ├── plugin-api/
 │   ├── maven-metadata.xml
-│   └── 2.0.0/
+│   └── 2.0.1/
 │       ├── plugin-api-1.4.0.aar
 │       ├── plugin-api-1.4.0.pom
 │       ├── plugin-api-1.4.0.module

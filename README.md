@@ -16,7 +16,7 @@ Super PI Agent 插件开发的公开 Maven 仓库：托管插件契约 `plugin-a
 
 | 坐标 | 版本 | 说明 |
 | --- | --- | --- |
-| `io.github.sadami3066.superpi:plugin-api` | `2.0.0` | 插件契约 SDK（AAR），当前 `PLUGIN_API_LEVEL = 7` |
+| `io.github.sadami3066.superpi:plugin-api` | `2.0.1` | 插件契约 SDK（AAR），当前 `PLUGIN_API_LEVEL = 7` |
 | `io.github.sadami3066.superpi:design` | `1.0.0` | 与 App 同源的 Compose 设计系统，版本独立维护 |
 
 `design` 通过 `plugin-api` 的 `api()` 传递，插件工程通常只需声明 `plugin-api`。
@@ -27,7 +27,7 @@ Super PI Agent 插件开发的公开 Maven 仓库：托管插件契约 `plugin-a
 io/github/sadami3066/superpi/
 ├── plugin-api/
 │   ├── maven-metadata.xml
-│   └── 2.0.0/
+│   └── 2.0.1/
 │       ├── plugin-api-1.4.0.aar
 │       ├── plugin-api-1.4.0.pom
 │       ├── plugin-api-1.4.0.module
