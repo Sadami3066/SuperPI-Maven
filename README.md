@@ -30,18 +30,18 @@ io/github/sadami3066/superpi/
 ├── plugin-api/
 │   ├── maven-metadata.xml
 │   └── 2.0.1/
-│       ├── plugin-api-1.4.0.aar
-│       ├── plugin-api-1.4.0.pom
-│       ├── plugin-api-1.4.0.module
-│       ├── plugin-api-1.4.0-sources.jar
+│       ├── plugin-api-2.0.1.aar
+│       ├── plugin-api-2.0.1.pom
+│       ├── plugin-api-2.0.1.module
+│       ├── plugin-api-2.0.1-sources.jar
 │       └── *.md5 / *.sha1 / *.sha256 / *.sha512
 └── design/
     ├── maven-metadata.xml
     └── 1.0.0/
-        ├── design-0.11.0.aar
-        ├── design-0.11.0.pom
-        ├── design-0.11.0.module
-        ├── design-0.11.0-sources.jar
+        ├── design-1.0.0.aar
+        ├── design-1.0.0.pom
+        ├── design-1.0.0.module
+        ├── design-1.0.0-sources.jar
         └── *.md5 / *.sha1 / *.sha256 / *.sha512
 ```
 
@@ -74,14 +74,14 @@ You can also declare it only in a module's `repositories { maven { url = uri("ht
 
 ```kotlin
 dependencies {
-    compileOnly("io.github.sadami3066.superpi:plugin-api:1.4.0")
+    compileOnly("io.github.sadami3066.superpi:plugin-api:2.0.1")
 }
 ```
 
 `design` is already provided transitively by `plugin-api`; if you declare it explicitly, use `compileOnly` as well:
 
 ```kotlin
-compileOnly("io.github.sadami3066.superpi:design:0.11.0")
+compileOnly("io.github.sadami3066.superpi:design:1.0.0")
 ```
 
 Plugins and the host share the same classes (parent-first). **Any library the host already provides must be declared with `compileOnly`, not `implementation`**: bundling `plugin-api`, Compose or coroutines into the `.ddp` duplicates host classes and causes class conflicts.
@@ -108,25 +108,27 @@ The plugin template currently uses AGP `9.4.1`, Kotlin `2.4.21`, Gradle `9.8.2` 
 package com.example.myplugin
 
 import io.github.whywood.superpi.plugin.api.Contributions
-import io.github.whywood.superpi.plugin.api.SuperPIPlugin
 import io.github.whywood.superpi.plugin.api.PluginAvailability
 import io.github.whywood.superpi.plugin.api.PluginHost
-import io.github.whywood.superpi.plugin.api.PluginTool
-import io.github.whywood.superpi.plugin.api.PluginToolResult
-import kotlinx.serialization.json.buildJsonObject
+import io.github.whywood.superpi.plugin.api.SuperPIPlugin
+import io.github.whywood.superpi.plugin.api.available
+import io.github.whywood.superpi.plugin.api.contributions
+import io.github.whywood.superpi.plugin.api.localizedText
+import io.github.whywood.superpi.plugin.api.objectSchema
+import io.github.whywood.superpi.plugin.api.pluginTool
+import io.github.whywood.superpi.plugin.api.textResult
 
 class MyPlugin : SuperPIPlugin {
-    override suspend fun availability(host: PluginHost): PluginAvailability =
-        PluginAvailability.Available
+    override suspend fun availability(host: PluginHost): PluginAvailability = available()
 
-    override fun contributions(host: PluginHost): Contributions = Contributions(
+    override fun contributions(host: PluginHost): Contributions = contributions(
         tools = listOf(
-            PluginTool(
+            pluginTool(
                 name = "hello",
-                label = "Hello",
+                label = localizedText("Hello", zh = "问候", en = "Hello"),
                 description = "Return a greeting.",
-                parameters = buildJsonObject {},
-                execute = { PluginToolResult.text("hello from MyPlugin") },
+                parameters = objectSchema(),
+                execute = { textResult("hello from MyPlugin") },
             ),
         ),
     )
@@ -139,9 +141,12 @@ The matching `assets/plugin.json`:
 {
   "id": "com.example.myplugin",
   "version": "1.0.0",
+  "apiLevel": 7,
+  "minHostVersion": "2.0.0",
+  "publisher": { "name": "example" },
   "entryClass": "com.example.myplugin.MyPlugin",
-  "name": { "default": "My Plugin", "zh": "我的插件" },
-  "summary": { "default": "Minimal PI plugin" },
+  "name": { "default": "My Plugin", "zh": "我的插件", "en": "My Plugin" },
+  "summary": { "default": "Minimal PI plugin", "zh": "最小 PI 插件", "en": "Minimal PI plugin" },
   "capabilities": []
 }
 ```
@@ -155,7 +160,7 @@ git clone https://github.com/Sadami3066/SuperPI-Plugins
 cp -R SuperPI-Plugins/template my-plugin
 ```
 
-The template already points at this repository and pins `pluginApiVersion = "1.4.0"` with the full set of `compileOnly` dependencies. After changing its `namespace` / `applicationId`, the manifest `id` / `version` / `entryClass`, and the package name:
+The template already points at this repository and pins `pluginApiVersion = "2.0.1"` with the full set of `compileOnly` dependencies. After changing its `namespace` / `applicationId`, the manifest `id` / `version` / `entryClass`, and the package name:
 
 ```bash
 ./gradlew generateSigningKey   # create an Ed25519 signing key on first use; never commit the private key
@@ -171,7 +176,7 @@ Copy the `.ddp` to your phone and install it from "Plugins → Import plugin" in
 ### Version selection and upgrades
 
 - Pin `plugin-api` through `pluginApiVersion` (or a literal version) in your plugin project; when the host SDK is upgraded, update it and rebuild.
-- The published `plugin-api` version (such as `2.0.0`) and the contract level `PLUGIN_API_LEVEL` (currently `6`) are maintained independently; a version bump does not necessarily change the level.
+- The published `plugin-api` version (such as `2.0.1`) and the contract level `PLUGIN_API_LEVEL` (currently `7`) are maintained independently; a version bump does not necessarily change the level.
 - `design` is versioned independently (currently `1.0.0`) and is provided transitively by `plugin-api`; do not add it with `implementation`.
 - Before upgrading, read [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/SuperPI/blob/master/docs/PLUGIN_DEV.md) and the [CHANGELOG](https://github.com/Sadami3066/SuperPI-Plugins/blob/master/CHANGELOG.md).
 
@@ -182,7 +187,7 @@ This repository is distribution only: files under `io/` are published artifacts,
 ### Relationship to the app plugin ABI
 
 - `plugin-api` is the single ABI contract between host and plugins. Plugins implement `SuperPIPlugin` and are loaded by the host in the app process with an in-memory ClassLoader; class resolution is parent-first.
-- The host uses the manifest `apiLevel` and the supported range (currently `6..6`) to decide whether to load a plugin; UI has its own `HOST_UI_API_LEVEL = 2` compatibility check.
+- The host uses the manifest `apiLevel` and the supported range (currently `7..7`) to decide whether to load a plugin; UI has its own `HOST_UI_API_LEVEL` compatibility check.
 - **There is no compatibility promise before release**: public types and signatures in `plugin-api` may change or be removed without raising `PLUGIN_API_LEVEL`, so rebuild against the latest SDK when upgrading. After release, the rule is "additive only within the same level; removals or changes require a level bump".
 - Compose has no binary ABI promise across versions: if host and plugin Kotlin / Compose versions differ, only that plugin's UI is disabled, not the rest of the plugin.
 - The public ABI is pinned by the ABI baseline and golden manifest in the host project; plugins must not reflect over host internals.

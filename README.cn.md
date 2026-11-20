@@ -30,18 +30,18 @@ io/github/sadami3066/superpi/
 ├── plugin-api/
 │   ├── maven-metadata.xml
 │   └── 2.0.1/
-│       ├── plugin-api-1.4.0.aar
-│       ├── plugin-api-1.4.0.pom
-│       ├── plugin-api-1.4.0.module
-│       ├── plugin-api-1.4.0-sources.jar
+│       ├── plugin-api-2.0.1.aar
+│       ├── plugin-api-2.0.1.pom
+│       ├── plugin-api-2.0.1.module
+│       ├── plugin-api-2.0.1-sources.jar
 │       └── *.md5 / *.sha1 / *.sha256 / *.sha512
 └── design/
     ├── maven-metadata.xml
     └── 1.0.0/
-        ├── design-0.11.0.aar
-        ├── design-0.11.0.pom
-        ├── design-0.11.0.module
-        ├── design-0.11.0-sources.jar
+        ├── design-1.0.0.aar
+        ├── design-1.0.0.pom
+        ├── design-1.0.0.module
+        ├── design-1.0.0-sources.jar
         └── *.md5 / *.sha1 / *.sha256 / *.sha512
 ```
 
@@ -74,14 +74,14 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    compileOnly("io.github.sadami3066.superpi:plugin-api:1.4.0")
+    compileOnly("io.github.sadami3066.superpi:plugin-api:2.0.1")
 }
 ```
 
 `design` 已由 `plugin-api` 传递；需要显式写坐标时同样使用 `compileOnly`：
 
 ```kotlin
-compileOnly("io.github.sadami3066.superpi:design:0.11.0")
+compileOnly("io.github.sadami3066.superpi:design:1.0.0")
 ```
 
 插件与宿主共享同一份类（parent-first）。**宿主已提供的库一律用 `compileOnly`，不要用 `implementation`**：把 `plugin-api`、Compose 或协程打包进 `.ddp` 会与宿主重复并触发类冲突。
@@ -108,25 +108,27 @@ compileOnly("io.github.sadami3066.superpi:design:0.11.0")
 package com.example.myplugin
 
 import io.github.whywood.superpi.plugin.api.Contributions
-import io.github.whywood.superpi.plugin.api.SuperPIPlugin
 import io.github.whywood.superpi.plugin.api.PluginAvailability
 import io.github.whywood.superpi.plugin.api.PluginHost
-import io.github.whywood.superpi.plugin.api.PluginTool
-import io.github.whywood.superpi.plugin.api.PluginToolResult
-import kotlinx.serialization.json.buildJsonObject
+import io.github.whywood.superpi.plugin.api.SuperPIPlugin
+import io.github.whywood.superpi.plugin.api.available
+import io.github.whywood.superpi.plugin.api.contributions
+import io.github.whywood.superpi.plugin.api.localizedText
+import io.github.whywood.superpi.plugin.api.objectSchema
+import io.github.whywood.superpi.plugin.api.pluginTool
+import io.github.whywood.superpi.plugin.api.textResult
 
 class MyPlugin : SuperPIPlugin {
-    override suspend fun availability(host: PluginHost): PluginAvailability =
-        PluginAvailability.Available
+    override suspend fun availability(host: PluginHost): PluginAvailability = available()
 
-    override fun contributions(host: PluginHost): Contributions = Contributions(
+    override fun contributions(host: PluginHost): Contributions = contributions(
         tools = listOf(
-            PluginTool(
+            pluginTool(
                 name = "hello",
-                label = "Hello",
+                label = localizedText("Hello", zh = "问候", en = "Hello"),
                 description = "Return a greeting.",
-                parameters = buildJsonObject {},
-                execute = { PluginToolResult.text("hello from MyPlugin") },
+                parameters = objectSchema(),
+                execute = { textResult("hello from MyPlugin") },
             ),
         ),
     )
@@ -139,9 +141,12 @@ class MyPlugin : SuperPIPlugin {
 {
   "id": "com.example.myplugin",
   "version": "1.0.0",
+  "apiLevel": 7,
+  "minHostVersion": "2.0.0",
+  "publisher": { "name": "example" },
   "entryClass": "com.example.myplugin.MyPlugin",
-  "name": { "default": "My Plugin", "zh": "我的插件" },
-  "summary": { "default": "Minimal PI plugin" },
+  "name": { "default": "My Plugin", "zh": "我的插件", "en": "My Plugin" },
+  "summary": { "default": "Minimal PI plugin", "zh": "最小 PI 插件", "en": "Minimal PI plugin" },
   "capabilities": []
 }
 ```
@@ -155,7 +160,7 @@ git clone https://github.com/Sadami3066/SuperPI-Plugins
 cp -R SuperPI-Plugins/template my-plugin
 ```
 
-模板已配置好本仓库地址、`pluginApiVersion = "1.4.0"` 与全套 `compileOnly` 依赖。改成自己的 `namespace` / `applicationId`、清单 `id` / `version` / `entryClass` 与包名后：
+模板已配置好本仓库地址、`pluginApiVersion = "2.0.1"` 与全套 `compileOnly` 依赖。改成自己的 `namespace` / `applicationId`、清单 `id` / `version` / `entryClass` 与包名后：
 
 ```bash
 ./gradlew generateSigningKey   # 首次生成 Ed25519 签名密钥，私钥不入库
@@ -171,7 +176,7 @@ cp -R SuperPI-Plugins/template my-plugin
 ### 版本选择与升级
 
 - 插件工程通过 `pluginApiVersion`（或直接写版本号）锁定 `plugin-api`；宿主 SDK 升级时同步改版本并重新编译。
-- `plugin-api` 的发布版本（如 `2.0.0`）与契约等级 `PLUGIN_API_LEVEL`（当前 `6`）独立维护，版本号变化不必然改变等级。
+- `plugin-api` 的发布版本（如 `2.0.1`）与契约等级 `PLUGIN_API_LEVEL`（当前 `7`）独立维护，版本号变化不必然改变等级。
 - `design` 版本独立（当前 `1.0.0`），由 `plugin-api` 传递，不要单独用 `implementation` 引入。
 - 升级前查看 [`docs/PLUGIN_DEV.md`](https://github.com/Sadami3066/SuperPI/blob/master/docs/PLUGIN_DEV.md) 与 [CHANGELOG](https://github.com/Sadami3066/SuperPI-Plugins/blob/master/CHANGELOG.md)。
 
@@ -182,7 +187,7 @@ cp -R SuperPI-Plugins/template my-plugin
 ### 与 App 插件 ABI 的关系
 
 - `plugin-api` 是宿主与插件之间的唯一 ABI 契约。插件实现 `SuperPIPlugin`，由宿主在 App 进程内用内存 ClassLoader 装载，类解析 parent-first。
-- 宿主按清单 `apiLevel` 与支持范围（当前 `6..6`）决定是否装载插件；UI 另有 `HOST_UI_API_LEVEL = 2` 的兼容判定。
+- 宿主按清单 `apiLevel` 与支持范围（当前 `7..7`）决定是否装载插件；UI 另有 `HOST_UI_API_LEVEL` 的兼容判定。
 - **发布前没有兼容承诺**：`plugin-api` 的公开类型与签名可能随版本删改而不提升 `PLUGIN_API_LEVEL`，升级后需用最新 SDK 重新编译；发布后才启用「同一等级只做加法，删改必须提升等级」的规则。
 - Compose 没有跨版本二进制 ABI 承诺：宿主与插件的 Kotlin / Compose 版本不一致时，只会禁用该插件的 UI，不影响插件其余部分。
 - 公开 ABI 由宿主工程中的 ABI 基线与 golden 清单固定；插件不要反射宿主内部实现。
