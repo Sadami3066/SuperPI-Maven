@@ -1,0 +1,151 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-ai/0.7.1/pi-ai-0.7.1.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-ai",
+    "version": "0.7.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-ai-jvm-0.7.1.jar",
+          "url": "pi-ai-jvm-0.7.1.jar",
+          "size": 1853225,
+          "sha512": "f9b5cbc0d8a69a4b3be71fe1309a1390e29843ccf0b2ffb8dd40564e442a8e649263048ee78caff0aafec8ed6bbcb4ce9596828ea3bc3058e6505134ceda08b3",
+          "sha256": "a1f85672fe11f0cd886ed7d62a775788955fbcdffea25cc33dce6218f17f77d6",
+          "sha1": "febdb14d786665b65a81f2461c1f72fbfb1e9c2d",
+          "md5": "6dc6be0f4510e47c896a72c932341689"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "5.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-ai-jvm-0.7.1.jar",
+          "url": "pi-ai-jvm-0.7.1.jar",
+          "size": 1853225,
+          "sha512": "f9b5cbc0d8a69a4b3be71fe1309a1390e29843ccf0b2ffb8dd40564e442a8e649263048ee78caff0aafec8ed6bbcb4ce9596828ea3bc3058e6505134ceda08b3",
+          "sha256": "a1f85672fe11f0cd886ed7d62a775788955fbcdffea25cc33dce6218f17f77d6",
+          "sha1": "febdb14d786665b65a81f2461c1f72fbfb1e9c2d",
+          "md5": "6dc6be0f4510e47c896a72c932341689"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "pi-ai-jvm-0.7.1-sources.jar",
+          "url": "pi-ai-jvm-0.7.1-sources.jar",
+          "size": 290008,
+          "sha512": "90539ea199e53fab816dfc26050014e64aa529684d185c9eda2d2a9d99f184bee959cffbcaa3fcdeda741e2e96fb56323c552529fd6ea4f1427cc3a2988104e4",
+          "sha256": "82df424a12b78c6b3940ac983c8660f7298e77062f55c878e1ea5ede4c9baa24",
+          "sha1": "eca5cbbfe497404a652ec173c21cb9f5c124157a",
+          "md5": "e5f715c88c8fe9480a89c44397cf15d3"
+        }
+      ]
+    }
+  ]
+}

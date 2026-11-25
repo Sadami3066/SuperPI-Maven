@@ -1,0 +1,190 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-ai",
+    "version": "0.7.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-ai-metadata-0.7.1.jar",
+          "url": "pi-ai-0.7.1.jar",
+          "size": 763,
+          "sha512": "9253af5cfc8f39970ebf409834807583dd45c1a7cf0f70911a18fb1b7b3404f82884ff97c30ecbb93001f95d3350882765f77c96f7944271faef8e54a58daf3f",
+          "sha256": "3ffb485785e6e9454e24cc804083ac205ae908478cb7f5c4df14b3a58fade43a",
+          "sha1": "3dcb9e4463bf32e0a5befc610d1c2aa7ca96dd56",
+          "md5": "e2687c1cba4475778d97ae5281d3cb1b"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "pi-ai-kotlin-0.7.1-sources.jar",
+          "url": "pi-ai-0.7.1-sources.jar",
+          "size": 288364,
+          "sha512": "27a8a74b1c282024c6e40abaff047838c2b62e344e02a78ec0ded5a91f5ef09881b5d60a3b943a9ced0cda5d55894d9d5fb6a4f44b79fa376be461d45a7d6fb9",
+          "sha256": "e612f45068cb3fa294606e102f8a52f40eed7756f42549a4d68059379150fc1c",
+          "sha1": "aca5e8b56e918ad75046f9baae624b6152b8cc8b",
+          "md5": "7fc96adf4a8382a7170a89db305fd0dc"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-ai-android/0.7.1/pi-ai-android-0.7.1.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-ai-android",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-ai-android/0.7.1/pi-ai-android-0.7.1.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-ai-android",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../pi-ai-android/0.7.1/pi-ai-android-0.7.1.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-ai-android",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-ai-jvm/0.7.1/pi-ai-jvm-0.7.1.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-ai-jvm",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-ai-jvm/0.7.1/pi-ai-jvm-0.7.1.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-ai-jvm",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../pi-ai-jvm/0.7.1/pi-ai-jvm-0.7.1.module",
+        "group": "io.github.whywood.superpi.sdk",
+        "module": "pi-ai-jvm",
+        "version": "0.7.1"
+      }
+    }
+  ]
+}

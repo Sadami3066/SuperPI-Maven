@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-agent/0.7.1/pi-agent-0.7.1.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-agent",
+    "version": "0.7.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-agent-jvm-0.7.1.jar",
+          "url": "pi-agent-jvm-0.7.1.jar",
+          "size": 251368,
+          "sha512": "169a1c83d813aa8cc286425d0b6cd09f20bd98ccdd38af577564bd662a8c81129a4452b38bc926e94b4149e98f3a545e80cad059fc8e60660695b8434de9967a",
+          "sha256": "c94da2adb5711ae7b506d452ea9dd4f82577d61eb4c2b2807a58b110be926bc5",
+          "sha1": "585a9dec367210ddccc8dac7a07b3dbf52961b97",
+          "md5": "863ee8b03aa35cc3da503eb6d4e12778"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-ai",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-agent-jvm-0.7.1.jar",
+          "url": "pi-agent-jvm-0.7.1.jar",
+          "size": 251368,
+          "sha512": "169a1c83d813aa8cc286425d0b6cd09f20bd98ccdd38af577564bd662a8c81129a4452b38bc926e94b4149e98f3a545e80cad059fc8e60660695b8434de9967a",
+          "sha256": "c94da2adb5711ae7b506d452ea9dd4f82577d61eb4c2b2807a58b110be926bc5",
+          "sha1": "585a9dec367210ddccc8dac7a07b3dbf52961b97",
+          "md5": "863ee8b03aa35cc3da503eb6d4e12778"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "pi-agent-jvm-0.7.1-sources.jar",
+          "url": "pi-agent-jvm-0.7.1-sources.jar",
+          "size": 19112,
+          "sha512": "2671e5c9698c06d8104f9d4cfb364aa5598d69fb1ee3c7e7f9bd62333cb1d06e0fd895312631ddc6aa9e91351457cde55a2c0b567ae4cbebaef42ea7324ea267",
+          "sha256": "f9e10481a06976b35e4132f43d86918cde303ebc67c629378853990ac4ad08d5",
+          "sha1": "31c1f0a9025269c7900c04536ccba3cb0a0758f4",
+          "md5": "2f86f90f9c098c4fea0b9149d828e951"
+        }
+      ]
+    }
+  ]
+}

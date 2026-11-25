@@ -1,0 +1,151 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-ai/0.7.1/pi-ai-0.7.1.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-ai",
+    "version": "0.7.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-ai.aar",
+          "url": "pi-ai-android-0.7.1.aar",
+          "size": 1741928,
+          "sha512": "0e42f4a12ae4fcc0292f8aa780cc4d7264e33cdee197329d3b8713e96a473ddc65f5ff6de5fab23bc38b7e150958a232bd82268e7711646cf3f9a5524012bf2d",
+          "sha256": "f769b2e18d2b0ff301406e52e331efe6d68030af49c4470286253d4e5f77a806",
+          "sha1": "2ebe84ca63952bf9ae718921f6a3835590609108",
+          "md5": "cd947d436c237da955c17b6d02517d6d"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "5.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-ai.aar",
+          "url": "pi-ai-android-0.7.1.aar",
+          "size": 1741928,
+          "sha512": "0e42f4a12ae4fcc0292f8aa780cc4d7264e33cdee197329d3b8713e96a473ddc65f5ff6de5fab23bc38b7e150958a232bd82268e7711646cf3f9a5524012bf2d",
+          "sha256": "f769b2e18d2b0ff301406e52e331efe6d68030af49c4470286253d4e5f77a806",
+          "sha1": "2ebe84ca63952bf9ae718921f6a3835590609108",
+          "md5": "cd947d436c237da955c17b6d02517d6d"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "pi-ai-android-0.7.1-sources.jar",
+          "url": "pi-ai-android-0.7.1-sources.jar",
+          "size": 290088,
+          "sha512": "80dc66a195255eb5eb34e71134f07d27ae93875720af41533bced628014fa834cc8e7256928e347f522c65b6bb8f71e4d00cfb098a07562857e3ebf8c5b99d11",
+          "sha256": "93d0d7d89455750ffc1c2793be937a622c0f297701ab793fc9c116a7c8d26bf7",
+          "sha1": "fe19a45db2baecc0bc68e6b18dbe6355208457d5",
+          "md5": "4306932516f20d32c731f7a285eeda53"
+        }
+      ]
+    }
+  ]
+}

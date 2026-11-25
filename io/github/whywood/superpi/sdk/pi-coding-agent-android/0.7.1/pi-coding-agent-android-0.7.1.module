@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../pi-coding-agent/0.7.1/pi-coding-agent-0.7.1.module",
+    "group": "io.github.whywood.superpi.sdk",
+    "module": "pi-coding-agent",
+    "version": "0.7.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-agent",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-mcp",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-coding-agent.aar",
+          "url": "pi-coding-agent-android-0.7.1.aar",
+          "size": 1149454,
+          "sha512": "ac4e2d380efee33ac5ffda9acdb315ef57dff17862964d07f45c2567d3dca460f0de1ca861854aefe9e863a5d6222300884fe4525c7a0cc2a7c822f9a88871d2",
+          "sha256": "531344a112d88ce0e94885b2786967e89f81cac16d1b9f07461e20d4fb3b7b9b",
+          "sha1": "9a6658fc597cd13469228c3a0c8375a7a4849910",
+          "md5": "db7ec938c925c6fc46b0c805c07ce6d0"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-agent",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "io.github.whywood.superpi.sdk",
+          "module": "pi-mcp",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "pi-coding-agent.aar",
+          "url": "pi-coding-agent-android-0.7.1.aar",
+          "size": 1149454,
+          "sha512": "ac4e2d380efee33ac5ffda9acdb315ef57dff17862964d07f45c2567d3dca460f0de1ca861854aefe9e863a5d6222300884fe4525c7a0cc2a7c822f9a88871d2",
+          "sha256": "531344a112d88ce0e94885b2786967e89f81cac16d1b9f07461e20d4fb3b7b9b",
+          "sha1": "9a6658fc597cd13469228c3a0c8375a7a4849910",
+          "md5": "db7ec938c925c6fc46b0c805c07ce6d0"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "pi-coding-agent-android-0.7.1-sources.jar",
+          "url": "pi-coding-agent-android-0.7.1-sources.jar",
+          "size": 149905,
+          "sha512": "a98518708a8ba01a2accb32273c70bac467de426cfacccf89906e76f3a639dffbbd4b5c5014589f8da4b446c5dc58f1e41718ec69390d3c2878a15bfb14ceb82",
+          "sha256": "d261614229314abcc034a8eab04a65b53c5ef6d2d4eddbbc299f107fb63b2249",
+          "sha1": "decb7414a8b6cef79fb151a32564f9b1476ff9bc",
+          "md5": "9c375aca62b92cc13cb1629de7758ae9"
+        }
+      ]
+    }
+  ]
+}
